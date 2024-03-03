@@ -1,12 +1,11 @@
 // custom-fs.js
 
-const bfs = require("browserify-fs"); // The browserify version of 'fs'
+const bfs = {}; // The browserify version of 'fs'
 
-const originalPromises = bfs.promises || {}; // Preserve original promises if they exist
+const originalPromises = {}; // Preserve original promises if they exist
 
 // Extend or add the promises object
 bfs.promises = {
-  ...originalPromises, // Spread existing promise-based methods
   mkdtemp: async (prefix) => {
     // Custom implementation for mkdtemp
     return `${prefix}${Date.now()}`; // Mock implementation

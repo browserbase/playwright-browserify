@@ -1,1 +1,1 @@
-browserify index.js -o bundle.js -r ./fake-bufferutil.js:bufferutil -r ./fake-utf-8-validate.js:utf-8-validate -r ./fake-electron/index.js:electron/index.js -r ./custom-url-mock.js:url -r ./fake-fs.js:fs -r ./ws-mock.js:ws
+browserify index.js -o playwright-web.js -r ./fake-bufferutil.js:bufferutil -r ./fake-utf-8-validate.js:utf-8-validate -r ./fake-electron/index.js:electron/index.js -r ./custom-url-mock.js:url -r ./fake-fs.js:fs -r ./ws-mock.js:ws
