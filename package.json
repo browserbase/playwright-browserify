@@ -1,0 +1,17 @@
+{
+  "name": "playwright-browserify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify-fs": "^1.0.0",
+    "playwright-core": "file:playwright-core",
+    "url": "^0.11.3"
+  }
+}
