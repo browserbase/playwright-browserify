@@ -17,5 +17,15 @@ process.hrtime = (previousTimestamp) => {
 };
 
 const playwright = require("playwright-core");
+const originalConsole = console;
+window.console = {
+  ...console,
+  log: (d) => {
+    if (window.onLog) {
+      window.onLog(d);
+    }
+    originalConsole.log(d);
+  },
+};
 
 window.playwright = playwright;

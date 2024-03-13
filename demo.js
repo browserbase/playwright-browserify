@@ -4,7 +4,7 @@ setTimeout(async () => {
   // This only works with ws, not wss for now
   const playwright = window.playwright;
   const browser = await playwright.chromium.connectOverCDP(
-    "ws://54.177.182.49:8080/devtools/browser/f9e5f523-e1a8-43a8-bb04-4309b0f0da66"
+    "ws://54.177.182.49:8080/devtools/browser/7d4ab6f4-7dcb-4c4a-b86d-48e5f7bcca4d"
   );
 
   // Create a new page
