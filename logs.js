@@ -1,6 +1,6 @@
 const originalConsole = console;
 
-// There is much more API here but let's handle just the log method for now
+// There is much more API here but let's handle log and debug for now which the demo and playwright use
 window.console = {
   ...console,
   log: (d) => {
