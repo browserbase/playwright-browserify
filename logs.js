@@ -1,3 +1,21 @@
+const originalConsole = console;
+
+// There is much more API here but let's handle just the log method for now
+window.console = {
+  ...console,
+  log: (d) => {
+    if (window.onLog) {
+      window.onLog(d);
+    }
+    originalConsole.log(d);
+  },
+  debug: (d) => {
+    if (window.onLog) {
+      window.onLog(d);
+    }
+    originalConsole.debug(d);
+  },
+};
 document.addEventListener("DOMContentLoaded", function () {
   var term = new Terminal();
   term.open(document.getElementById("terminal"));

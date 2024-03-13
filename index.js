@@ -15,18 +15,9 @@ process.hrtime = (previousTimestamp) => {
   }
   return mockTime;
 };
+process.env.DEBUG = "pw:*";
 
 const playwright = require("playwright-core");
-const originalConsole = console;
-// There is much more API here but let's handle just the log method for now
-window.console = {
-  ...console,
-  log: (d) => {
-    if (window.onLog) {
-      window.onLog(d);
-    }
-    originalConsole.log(d);
-  },
-};
+const originalPlaywrightLogger = playwright._toImpl;
 
 window.playwright = playwright;
