@@ -15,7 +15,7 @@ process.hrtime = (previousTimestamp) => {
   }
   return mockTime;
 };
-process.env.DEBUG = "pw:*";
+process.env.DEBUG = "pw:protocol";
 
 const playwright = require("playwright-core");
 const originalPlaywrightLogger = playwright._toImpl;

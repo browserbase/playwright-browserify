@@ -16,6 +16,7 @@ window.console = {
     originalConsole.debug(d);
   },
 };
+
 document.addEventListener("DOMContentLoaded", function () {
   var term = new Terminal();
   term.open(document.getElementById("terminal"));
@@ -24,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let fitAddon = new FitAddon.FitAddon();
   term.loadAddon(fitAddon);
   fitAddon.fit();
+
+  window.addEventListener("resize", () => {
+    fitAddon.fit();
+  });
 
   window.onLog = (data) => {
     if (typeof data === "object") {
