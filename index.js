@@ -18,6 +18,7 @@ process.hrtime = (previousTimestamp) => {
 
 const playwright = require("playwright-core");
 const originalConsole = console;
+// There is much more API here but let's handle just the log method for now
 window.console = {
   ...console,
   log: (d) => {

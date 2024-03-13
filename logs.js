@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
   term.loadAddon(fitAddon);
   fitAddon.fit();
 
-  window.onLog = (d) => {
-    if (typeof d === "object") {
-      term.write(JSON.stringify(d) + "\r\n");
+  window.onLog = (data) => {
+    if (typeof data === "object") {
+      term.write(`${JSON.stringify(d)}\r\n`);
     } else {
-      term.write(d + "\r\n");
+      term.write(`${data}\r\n`);
     }
   };
 });
