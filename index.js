@@ -15,6 +15,8 @@ process.hrtime = (previousTimestamp) => {
   }
   return mockTime;
 };
+
+// there might be a better channel of logs to subscribe to depending on what we want to show the user
 process.env.DEBUG = "pw:protocol";
 
 const playwright = require("playwright-core");
