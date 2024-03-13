@@ -1,14 +1,17 @@
-console.log(window);
-
 document.addEventListener("DOMContentLoaded", function () {
+  var term = new Terminal();
+  term.open(document.getElementById("terminal"));
+  term.write("initializing...\r\n");
+
+  let fitAddon = new FitAddon.FitAddon();
+  term.loadAddon(fitAddon);
+  fitAddon.fit();
+
   window.onLog = (d) => {
-    const logs = document.querySelector("#logs");
-    if (logs) {
-      const logItem = document.createElement("li");
-      logItem.textContent = JSON.stringify(d);
-      logs.appendChild(logItem);
+    if (typeof d === "object") {
+      term.write(JSON.stringify(d) + "\r\n");
+    } else {
+      term.write(d + "\r\n");
     }
   };
-
-  console.log("DOM fully loaded and parsed");
 });
