@@ -18,6 +18,5 @@ process.hrtime = (previousTimestamp) => {
 process.env.DEBUG = "pw:protocol";
 
 const playwright = require("playwright-core");
-const originalPlaywrightLogger = playwright._toImpl;
 
 window.playwright = playwright;
